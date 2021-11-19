@@ -1,50 +1,35 @@
-import React  from 'react';
+import React from "react";
 
+import { Text, View, Image, StatusBar } from "react-native";
 
-import {
-  Text, 
-  View,
-  Image,
-  StatusBar } 
-  from 'react-native';
+import { ButtonIcon } from "../../components/ButtonIcon";
+import IlustrationImg from "../../assets/illustration.png";
 
-import { ButtonIcon } from '../../components/ButtonIcon';  
-import IlustrationImg from '../../assets/illustration.png';
-
-import {style} from './styled';
+import { style } from "./styled";
 
 export function SignIn() {
+  return (
+    <View style={style.Container}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <Image source={IlustrationImg} style={style.image} resizeMode="stretch" />
 
-    return (
-      <View style={style.Container}>
-        <StatusBar 
-          barStyle='light-content'
-          backgroundColor='transparent'
-          translucent
-        />
-        <Image source={IlustrationImg} 
-        style={style.image}
-        resizeMode='stretch'
-        />
+      <View style={style.content}>
+        <Text style={style.title}>
+          Conecte-se {`\n`}e organise suas {`\n`}
+          Jogatinas{`\n`}
+        </Text>
 
-        <View style={style.content}>
-          <Text style={style.title}>
-            Organize {`\n`}
-            suas jogatinas {`\n`}
-            facilmente{`\n`}
-          </Text>
+        <Text style={style.subtitle}>
+          Crie grupos para jogar seus games {`\n`}
+          favoritos com seus amigos
+        </Text>
 
-          <Text style={style.subtitle}>
-            Crie grupos para jogar seus games {`\n`}
-            favoritos com seus amigos
-          </Text>
-
-          <ButtonIcon 
-          title='Entrar com o Discord'
-          activeOpacity={0.7}
-          />
-        </View>
-      </View> 
-      
-    );
-  }
+        <ButtonIcon title="Entrar com o Discord" activeOpacity={0.7} />
+      </View>
+    </View>
+  );
+}
